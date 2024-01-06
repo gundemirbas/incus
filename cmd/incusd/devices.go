@@ -699,6 +699,10 @@ func ueventParseVendorProduct(props map[string]string, subsystem string, devname
 		return vendor, product, true
 	}
 
+        if subsystem == "input" {
+                return "beef", "dead", true
+        }
+	
 	if subsystem != "hidraw" {
 		return "", "", false
 	}
